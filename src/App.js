@@ -39,7 +39,7 @@ class App extends Component {
     this.setState({ posts });
     try {
       // await axios.delete(apiEndpoint + "/" + post.id);
-      await axios.delete(apiEndpoint + "/999");
+      await axios.delete("s" + apiEndpoint + "/" + post.id);
 
       // Unexpected (network down, server down, db down, bug)
       // - Log them
