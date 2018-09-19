@@ -8,7 +8,7 @@ axios.interceptors.response.use(null, error => {
     error.response.status >= 400 &&
     error.response.status < 500;
   if (!expectedError) {
-    console.log("Logging the error", ex);
+    console.log("Logging the error", error);
     alert("An unexpected error occurred.");
   }
   return Promise.reject(error);
@@ -51,7 +51,7 @@ class App extends Component {
     this.setState({ posts });
     try {
       // await axios.delete(apiEndpoint + "/" + post.id);
-      await axios.delete(apiEndpoint + "/999" + post.id);
+      await axios.delete(apiEndpoint + "/" + post.id);
 
       // Unexpected (network down, server down, db down, bug)
       // - Log them
